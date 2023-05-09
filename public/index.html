@@ -1,12 +1,64 @@
-<html>
-    <head>
-        <title>Rock</title>
-        <!-- Link to your script file(s) and CSS in here somewhere -->
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>RPS and RPSLS</title>
+	<link href="./styles.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script src="./scripts.js"></script>
+</head>
 
-    <!-- Your interface markup goes here -->
-    <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
+<body onload="showHideShots()">
+	<div class="container">
+		<h1 class="main-heading">Play Rock Paper Scissors &amp; RPSLS!</h1>
+		<form id="userinput" class="" action="javascript:void(0);">
+			<input type="radio" id="rps" name="game" value="rps" checked
+				onclick="resetShotSelection(); showHideShots();">
+			<label for="rps">Play rock, paper, scissors?</label>
+			<a href="https://wrpsa.com/the-official-rules-of-rock-paper-scissors/">Look here
+				for information on the rules of RPS!</a>
+			<br><br>
+			<input type="radio" id="rpsls" name="game" value="rpsls" onclick="resetShotSelection(); showHideShots();">
+			<label for="rpsls">Play rock, paper, scissors, lizard, Spock?</label>
+			<a href="https://bigbangtheory.fandom.com/wiki/Rock,_Paper,_Scissors,_Lizard,_Spock">
+				Look here for information on the rules of RPSLS!</a>
+			<br><br>
 
-    </body>
+			<input type="checkbox" id="opponent" name="playtype" value="opponent"
+				onclick="resetShotSelection(); showHideShots();">
+			<label for="opponent">Play against an opponent?</label>
+			<br><br>
+			<div class="input-container rps">
+				<input type="radio" id="rock" name="shot" value="rock" class="shots">
+				<label class="input-container" for="rock"><img src="./img/rock.jpg" alt="rock">Rock</label>
+			</div>
+			<div class="input-container rps">
+				<input type="radio" id="paper" name="shot" value="paper" class="shots">
+				<label class="input-container" for="paper"><img src="./img/paper.jpg" alt="rock">Paper</label>
+			</div>
+			<div class="input-container rps">
+				<input type="radio" id="scissors" name="shot" value="scissors" class="shots">
+				<label class="input-container" for="scissors"><img src="./img/scissors.jpg" alt="rock">Scissors</label>
+			</div>
+			<div class="input-container rpsls">
+				<input type="radio" id="lizard" name="shot" value="lizard" class="shots">
+				<label class="input-container" for="lizard"><img src="./img/lizard.jpg" alt="lizard">Lizard</label>
+			</div>
+			<div class="input-container rpsls">
+				<input type="radio" id="spock" name="shot" value="spock" class="shots">
+				<label class="input-container" for="spock"><img src="./img/spock.jpg" alt="spock">Spock</label>
+			</div>
+			<br><br>
+		    <button type="submit" id="play" name="controls" onclick="playGame()">Play</button>
+		    <button type="submit" id="startover" name="controls" onclick="startOver()">Start Over</button>
+			<!--			<br><br>
+			<input type="submit" id="play" name="controls" value="Play">
+      <input type="submit" id="startover" name="controls" value="Start Over"> -->
+		</form>
+		<div id="results"></div>
+
+		<!-- Your interface markup goes here -->
+		<!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
+	</div>
+</body>
 </html>
